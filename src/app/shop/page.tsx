@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useStore } from "@/context/StoreContext";
 import { Product } from "@/data/mockData";
 import { SlidersHorizontal, ArrowUpDown, Grid, Search, Heart, X } from "lucide-react";
 
-export default function Shop() {
+function ShopContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { products, categories, wishlist, toggleWishlist } = useStore();
@@ -441,5 +441,13 @@ export default function Shop() {
       )}
 
     </div>
+  );
+}
+
+export default function Shop() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center font-serif text-sm tracking-widest text-luxury-gray dark:text-luxury-beige">LOADING...</div>}>
+      <ShopContent />
+    </Suspense>
   );
 }
