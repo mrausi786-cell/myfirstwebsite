@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,46 +6,54 @@
 
 :root {
   --font-sans: 'Inter', sans-serif;
-  --font-display: 'Outfit', sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #FFFFFF;
-  color: #111111;
+  background-color: #FAF8F5; /* Warm Linen */
+  color: #0B100E; /* Midnight Obsidian */
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom Minimalist Scrollbar */
+/* Dark mode overrides */
+.dark body {
+  background-color: #0A110E; /* Deep Obsidian Green */
+  color: #FAF8F5;
+}
+
+/* Custom Refined Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F7F6F4;
+  background: #FCFAF7;
+  border-left: 1px solid #E4DCD0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #111111;
+  background: #8DA89F; /* Soft Sage Green */
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #767676;
+  background: #C2593E; /* Terracotta Rust */
 }
 
-/* Dark Mode Scrollbar */
 .dark ::-webkit-scrollbar-track {
-  background: #1A1A1A;
+  background: #0A110E;
+  border-left: 1px solid #202E29;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #F7F6F4;
+  background: #202E29; /* Dark Sage Green */
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #A39B92;
+  background: #C2593E; /* Terracotta Rust */
 }
 
 /* Base custom classes */
@@ -53,37 +61,44 @@ body {
   font-family: var(--font-display);
 }
 
-.font-serif {
-  font-family: 'Playfair Display', Georgia, serif;
+.font-mono {
+  font-family: 'Space Grotesk', monospace;
+}
+
+/* Elegant Borders & Soft Shadows */
+.brutalist-border {
+  border: 1px solid #E4DCD0; /* Linen Outline */
+  transition: border-color 0.3s ease;
+}
+.dark .brutalist-border {
+  border: 1px solid #202E29; /* Dark Sage Outline */
+}
+
+.brutalist-shadow {
+  box-shadow: 0 4px 20px -2px rgba(15, 46, 37, 0.04), 0 2px 10px -1px rgba(15, 46, 37, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.brutalist-shadow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -4px rgba(15, 46, 37, 0.08), 0 4px 16px -2px rgba(15, 46, 37, 0.04);
+}
+.dark .brutalist-shadow {
+  box-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.35);
+}
+.dark .brutalist-shadow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px -4px rgba(0, 0, 0, 0.6);
 }
 
 /* Smooth zoom effect */
 .zoom-container {
   overflow: hidden;
 }
-
 .zoom-image {
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
-
 .zoom-container:hover .zoom-image {
-  transform: scale(1.05);
-}
-
-/* Custom animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform: scale(1.08);
 }
 
 /* Utility to hide input arrows */
@@ -94,4 +109,16 @@ input::-webkit-inner-spin-button {
 }
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+/* Marquee container */
+.marquee-container {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  min-width: 100%;
 }

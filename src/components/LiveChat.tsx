@@ -80,7 +80,7 @@ export default function LiveChat() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-luxury-black text-white shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:bg-white dark:text-luxury-black"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-genz-black text-white shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:bg-white dark:text-genz-black"
           aria-label="Open Live Chat"
         >
           <MessageSquare className="h-6 w-6" />
@@ -89,10 +89,10 @@ export default function LiveChat() {
 
       {/* Chat Window Panel */}
       {isOpen && (
-        <div className="flex h-[450px] w-[330px] flex-col rounded-xl border border-luxury-border bg-white shadow-2xl transition-colors duration-300 dark:border-luxury-charcoal dark:bg-luxury-charcoal sm:w-[360px]">
+        <div className="flex h-[450px] w-[330px] flex-col rounded-xl border border-genz-border bg-white shadow-2xl transition-colors duration-300 dark:border-genz-border/30 dark:bg-genz-charcoal sm:w-[360px]">
           
           {/* Header */}
-          <div className="flex items-center justify-between bg-luxury-black px-4 py-3.5 text-white rounded-t-xl dark:bg-luxury-beige-dark dark:text-luxury-black">
+          <div className="flex items-center justify-between bg-genz-black px-4 py-3.5 text-white rounded-t-xl dark:bg-genz-pink dark:text-white">
             <div className="flex items-center space-x-2">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -112,7 +112,7 @@ export default function LiveChat() {
           </div>
 
           {/* Message List Area */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-luxury-lightGray/40 dark:bg-luxury-black/20">
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-genz-light/40 dark:bg-genz-black/20">
             {messages.map((msg) => (
               <div
                 key={msg.id}
@@ -123,13 +123,13 @@ export default function LiveChat() {
                 <div
                   className={`rounded-xl px-3 py-2 text-xs leading-relaxed ${
                     msg.sender === "user"
-                      ? "bg-luxury-black text-white rounded-tr-none dark:bg-white dark:text-luxury-black"
-                      : "bg-white text-luxury-black border border-luxury-border rounded-tl-none dark:bg-luxury-charcoal dark:text-white dark:border-luxury-charcoal/60 shadow-sm"
+                      ? "bg-genz-black text-white rounded-tr-none dark:bg-white dark:text-genz-black"
+                      : "bg-white text-genz-black border border-genz-border rounded-tl-none dark:bg-genz-charcoal dark:text-white dark:border-genz-border/30 shadow-sm"
                   }`}
                 >
                   {msg.text}
                 </div>
-                <span className="text-[9px] text-luxury-gray mt-1 px-1 dark:text-luxury-beige/50">
+                <span className="text-[9px] text-genz-gray mt-1 px-1 dark:text-genz-blue/50">
                   {msg.time}
                 </span>
               </div>
@@ -137,10 +137,10 @@ export default function LiveChat() {
 
             {isTyping && (
               <div className="flex flex-col items-start max-w-[80%]">
-                <div className="rounded-xl px-4 py-2 bg-white text-luxury-black border border-luxury-border rounded-tl-none dark:bg-luxury-charcoal dark:border-luxury-charcoal/60 shadow-sm flex items-center space-x-1.5">
-                  <span className="h-1.5 w-1.5 bg-luxury-gray rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                  <span className="h-1.5 w-1.5 bg-luxury-gray rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                  <span className="h-1.5 w-1.5 bg-luxury-gray rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                <div className="rounded-xl px-4 py-2 bg-white text-genz-black border border-genz-border rounded-tl-none dark:bg-genz-charcoal dark:border-genz-border/30 shadow-sm flex items-center space-x-1.5">
+                  <span className="h-1.5 w-1.5 bg-genz-gray rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                  <span className="h-1.5 w-1.5 bg-genz-gray rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                  <span className="h-1.5 w-1.5 bg-genz-gray rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                 </div>
               </div>
             )}
@@ -149,12 +149,12 @@ export default function LiveChat() {
           </div>
 
           {/* Quick suggestions */}
-          <div className="px-4 py-2 border-t border-luxury-border/60 bg-white flex flex-wrap gap-1.5 dark:bg-luxury-charcoal dark:border-luxury-charcoal/60">
+          <div className="px-4 py-2 border-t border-genz-border bg-white flex flex-wrap gap-1.5 dark:bg-genz-charcoal dark:border-genz-border/30">
             <button
               onClick={() => {
                 setInputValue("How is the sizing fit?");
               }}
-              className="text-[9px] tracking-wider uppercase border border-luxury-border px-2 py-1 rounded-full text-luxury-gray hover:bg-luxury-lightGray dark:border-luxury-charcoal/60 dark:hover:bg-luxury-black dark:text-luxury-beige/80"
+              className="text-[9px] tracking-wider uppercase border border-genz-border px-2 py-1 rounded-full text-genz-gray hover:bg-genz-light dark:border-genz-border/30 dark:hover:bg-genz-black dark:text-genz-blue/80"
             >
               Sizing Fit
             </button>
@@ -162,7 +162,7 @@ export default function LiveChat() {
               onClick={() => {
                 setInputValue("How do I track my order?");
               }}
-              className="text-[9px] tracking-wider uppercase border border-luxury-border px-2 py-1 rounded-full text-luxury-gray hover:bg-luxury-lightGray dark:border-luxury-charcoal/60 dark:hover:bg-luxury-black dark:text-luxury-beige/80"
+              className="text-[9px] tracking-wider uppercase border border-genz-border px-2 py-1 rounded-full text-genz-gray hover:bg-genz-light dark:border-genz-border/30 dark:hover:bg-genz-black dark:text-genz-blue/80"
             >
               Track Order
             </button>
@@ -170,7 +170,7 @@ export default function LiveChat() {
               onClick={() => {
                 setInputValue("Can I get a discount code?");
               }}
-              className="text-[9px] tracking-wider uppercase border border-luxury-border px-2 py-1 rounded-full text-luxury-gray hover:bg-luxury-lightGray dark:border-luxury-charcoal/60 dark:hover:bg-luxury-black dark:text-luxury-beige/80"
+              className="text-[9px] tracking-wider uppercase border border-genz-border px-2 py-1 rounded-full text-genz-gray hover:bg-genz-light dark:border-genz-border/30 dark:hover:bg-genz-black dark:text-genz-blue/80"
             >
               Discount Codes
             </button>
@@ -179,19 +179,19 @@ export default function LiveChat() {
           {/* Message input */}
           <form
             onSubmit={handleSendMessage}
-            className="flex items-center p-3 border-t border-luxury-border bg-white rounded-b-xl transition-colors duration-300 dark:border-luxury-charcoal dark:bg-luxury-charcoal"
+            className="flex items-center p-3 border-t border-genz-border bg-white rounded-b-xl transition-colors duration-300 dark:border-genz-border/30 dark:bg-genz-charcoal"
           >
             <input
               type="text"
               placeholder="Type your message..."
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              className="flex-1 bg-transparent text-xs text-luxury-black outline-none placeholder:text-luxury-gray/70 dark:text-white"
+              className="flex-1 bg-transparent text-xs text-genz-black outline-none placeholder:text-genz-gray/70 dark:text-white"
             />
             <button
               type="submit"
               disabled={!inputValue.trim()}
-              className="p-1 text-luxury-black hover:text-luxury-gray dark:text-white dark:hover:text-luxury-beige disabled:opacity-35"
+              className="p-1 text-genz-black hover:text-genz-gray dark:text-white dark:hover:text-genz-blue disabled:opacity-35"
               aria-label="Send message"
             >
               <Send className="h-4.5 w-4.5" />

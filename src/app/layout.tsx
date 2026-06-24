@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="flex min-h-screen flex-col font-sans transition-colors duration-300 bg-white text-luxury-black dark:bg-luxury-black dark:text-white">
+      <body className="flex min-h-screen flex-col font-sans transition-colors duration-300 bg-genz-light text-genz-black dark:bg-genz-black dark:text-genz-light">
         <ThemeProvider>
           <StoreProvider>
             <Header />

@@ -18,63 +18,63 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-luxury-border bg-luxury-lightGray transition-colors duration-300 dark:border-luxury-charcoal dark:bg-luxury-charcoal/30">
+    <footer className="border-t border-genz-border bg-genz-acid text-genz-light dark:bg-genz-black dark:border-genz-border transition-colors duration-300">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           
           {/* Brand Info */}
-          <div className="space-y-4">
-            <span className="font-display text-lg font-bold tracking-widest text-luxury-black dark:text-white">
-              SHAHROZE STUDIO
+          <div className="space-y-6">
+            <span className="font-display text-3xl font-black tracking-widest text-genz-light dark:text-genz-blue">
+              SHAHROZE
             </span>
-            <p className="font-serif italic text-xs text-luxury-gray dark:text-luxury-beige/70">
-              "Timeless Style. Modern Confidence."
+            <p className="font-mono font-bold text-sm bg-genz-pink text-white inline-block px-2 py-1 transform -rotate-2">
+              DESI STREETWEAR FUSION.
             </p>
-            <p className="text-xs text-luxury-gray dark:text-luxury-beige/60 leading-relaxed max-w-sm">
-              We design and construct garments with a strict emphasis on raw materials, tailored fits, and elegant simplicity. Inspired by high-end design principles.
+            <p className="text-sm font-mono text-genz-light/80 dark:text-white/80 leading-relaxed max-w-sm">
+              Refining the rules. Taking raw silk, block prints, and Pakistani craftsmanship into the contemporary era of designer streetwear.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-luxury-gray hover:text-luxury-black dark:hover:text-white" aria-label="Instagram">
-                <Instagram className="h-4 w-4" />
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="bg-genz-pink/15 text-genz-light p-2 border border-genz-border/20 hover:bg-genz-pink hover:text-white transition-colors brutalist-shadow" aria-label="Instagram">
+                <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-luxury-gray hover:text-luxury-black dark:hover:text-white" aria-label="Twitter">
-                <Twitter className="h-4 w-4" />
+              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="bg-genz-pink/15 text-genz-blue p-2 border border-genz-border/20 hover:bg-genz-pink hover:text-white transition-colors brutalist-shadow" aria-label="Twitter">
+                <Twitter className="h-5 w-5" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-luxury-gray hover:text-luxury-black dark:hover:text-white" aria-label="Facebook">
-                <Facebook className="h-4 w-4" />
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="bg-genz-pink/15 text-white p-2 border border-genz-border/20 hover:bg-genz-pink hover:text-white transition-colors brutalist-shadow" aria-label="Facebook">
+                <Facebook className="h-5 w-5" />
               </a>
             </div>
           </div>
 
           {/* Quick links */}
           <div>
-            <span className="font-display text-[10px] font-bold tracking-widest text-luxury-black dark:text-white block mb-4">
+            <span className="font-display text-xl font-black uppercase text-genz-light dark:text-genz-pink block mb-6 border-b border-genz-border/20 inline-block">
               COLLECTIONS
             </span>
-            <ul className="space-y-2 text-xs text-luxury-gray dark:text-luxury-beige/70">
+            <ul className="space-y-4 font-mono font-bold text-sm text-genz-light/90 dark:text-white">
               <li>
-                <Link href="/shop?category=Men's Wear" className="hover:text-luxury-black dark:hover:text-white transition-colors">
-                  Men's Wear
+                <Link href="/shop?category=Kurtas" className="hover:text-genz-pink dark:hover:text-genz-blue hover:underline transition-colors uppercase">
+                  Oversized Kurtas
                 </Link>
               </li>
               <li>
-                <Link href="/shop?category=Women's Wear" className="hover:text-luxury-black dark:hover:text-white transition-colors">
-                  Women's Wear
+                <Link href="/shop?category=Shalwar Kameez" className="hover:text-genz-pink dark:hover:text-genz-blue hover:underline transition-colors uppercase">
+                  Shalwar Kameez
                 </Link>
               </li>
               <li>
-                <Link href="/shop?category=Hoodies" className="hover:text-luxury-black dark:hover:text-white transition-colors">
-                  Hoodies & Sweats
+                <Link href="/shop?category=Streetwear Fusion" className="hover:text-genz-pink dark:hover:text-genz-blue hover:underline transition-colors uppercase">
+                  Streetwear Fusion
                 </Link>
               </li>
               <li>
-                <Link href="/shop?category=T-Shirts" className="hover:text-luxury-black dark:hover:text-white transition-colors">
-                  Minimalist Tees
+                <Link href="/shop?category=Dupattas" className="hover:text-genz-pink dark:hover:text-genz-blue hover:underline transition-colors uppercase">
+                  Dupattas
                 </Link>
               </li>
               <li>
-                <Link href="/shop?category=Jackets" className="hover:text-luxury-black dark:hover:text-white transition-colors">
-                  Outwear & Jackets
+                <Link href="/shop?category=Accessories" className="hover:text-genz-pink dark:hover:text-genz-blue hover:underline transition-colors uppercase">
+                  Accessories
                 </Link>
               </li>
             </ul>
@@ -82,33 +82,23 @@ export default function Footer() {
 
           {/* Customer Service */}
           <div>
-            <span className="font-display text-[10px] font-bold tracking-widest text-luxury-black dark:text-white block mb-4">
-              SUPPORT & POLICIES
+            <span className="font-display text-xl font-black uppercase text-genz-light dark:text-genz-pink block mb-6 border-b border-genz-border/20 inline-block">
+              SUPPORT
             </span>
-            <ul className="space-y-2 text-xs text-luxury-gray dark:text-luxury-beige/70">
+            <ul className="space-y-4 font-mono font-bold text-sm text-genz-light/90 dark:text-white">
               <li>
-                <Link href="/faq" className="hover:text-luxury-black dark:hover:text-white transition-colors">
-                  Frequently Asked Questions
+                <Link href="/faq" className="hover:text-genz-pink dark:hover:text-genz-blue hover:underline transition-colors uppercase">
+                  FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/shipping" className="hover:text-luxury-black dark:hover:text-white transition-colors">
-                  Shipping Policy
+                <Link href="/shipping" className="hover:text-genz-pink dark:hover:text-genz-blue hover:underline transition-colors uppercase">
+                  Shipping
                 </Link>
               </li>
               <li>
-                <Link href="/returns" className="hover:text-luxury-black dark:hover:text-white transition-colors">
-                  Returns & Refunds
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="hover:text-luxury-black dark:hover:text-white transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="hover:text-luxury-black dark:hover:text-white transition-colors">
-                  Terms & Conditions
+                <Link href="/returns" className="hover:text-genz-pink dark:hover:text-genz-blue hover:underline transition-colors uppercase">
+                  Returns
                 </Link>
               </li>
             </ul>
@@ -116,41 +106,41 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div className="space-y-4">
-            <span className="font-display text-[10px] font-bold tracking-widest text-luxury-black dark:text-white block mb-2">
-              NEWSLETTER
+            <span className="font-display text-xl font-black uppercase text-genz-light dark:text-genz-pink block mb-4 border-b border-genz-border/20 inline-block">
+              JOIN THE CULT
             </span>
-            <p className="text-xs text-luxury-gray dark:text-luxury-beige/60">
-              Subscribe to receive private collection drops, editorial lookbooks, and exclusive offers.
+            <p className="font-mono font-bold text-xs text-genz-light/95 dark:text-white">
+              Get early access to exclusive drops and pop-ups in Lahore and Karachi.
             </p>
             {subscribed ? (
-              <p className="text-xs font-semibold text-luxury-black dark:text-white animate-pulse">
-                THANK YOU FOR SUBSCRIBING.
+              <p className="text-sm font-black bg-genz-pink text-white p-2 text-center animate-pulse border border-genz-border/20">
+                YOU'RE ON THE LIST.
               </p>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex border-b border-luxury-black/40 py-1 dark:border-white/40">
+              <form onSubmit={handleSubscribe} className="flex border border-genz-border bg-white/10 dark:bg-black/40">
                 <input
                   type="email"
-                  placeholder="ENTER YOUR EMAIL"
+                  placeholder="DROP YOUR EMAIL"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-transparent text-xs tracking-wider uppercase text-luxury-black outline-none placeholder:text-luxury-gray/50 dark:text-white"
+                  className="w-full bg-transparent p-3 font-mono font-bold text-sm tracking-wider uppercase text-genz-light outline-none placeholder:text-genz-light/45 dark:text-white"
                   required
                 />
-                <button type="submit" className="text-luxury-black hover:text-luxury-beige-dark dark:text-white" aria-label="Subscribe">
-                  <ArrowRight className="h-4 w-4" />
+                <button type="submit" className="bg-genz-pink px-4 text-white hover:bg-genz-pink/80 transition-colors" aria-label="Subscribe">
+                  <ArrowRight className="h-6 w-6" />
                 </button>
               </form>
             )}
             
             {/* Contact Details */}
-            <div className="pt-4 text-xs text-luxury-gray dark:text-luxury-beige/60 space-y-2">
-              <div className="flex items-center space-x-2">
-                <Phone className="h-3 w-3" />
-                <a href="tel:0414863411" className="hover:text-luxury-black dark:hover:text-white">0414 863 411</a>
+            <div className="pt-6 font-mono font-bold text-sm text-genz-light/90 dark:text-white space-y-3">
+              <div className="flex items-center space-x-3 bg-white/5 border border-genz-border/20 p-2 dark:bg-black/20 w-fit brutalist-shadow">
+                <Phone className="h-4 w-4 text-genz-pink" />
+                <a href="tel:0414863411" className="hover:text-genz-pink">0414 863 411</a>
               </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="h-3 w-3" />
-                <a href="mailto:mr.ausi786@gmail.com" className="hover:text-luxury-black dark:hover:text-white">mr.ausi786@gmail.com</a>
+              <div className="flex items-center space-x-3 bg-white/5 border border-genz-border/20 p-2 dark:bg-black/20 w-fit brutalist-shadow">
+                <Mail className="h-4 w-4 text-genz-blue" />
+                <a href="mailto:mr.ausi786@gmail.com" className="hover:text-genz-blue">mr.ausi786@gmail.com</a>
               </div>
             </div>
           </div>
@@ -158,9 +148,9 @@ export default function Footer() {
         </div>
 
         {/* Footer bottom */}
-        <div className="mt-12 border-t border-luxury-border/60 pt-6 flex flex-col sm:flex-row items-center justify-between text-[10px] tracking-widest text-luxury-gray/80 dark:border-luxury-charcoal/60 dark:text-luxury-beige/50">
-          <p>© {new Date().getFullYear()} SHAHROZE STUDIO. ALL RIGHTS RESERVED.</p>
-          <div className="mt-2 sm:mt-0 flex space-x-4">
+        <div className="mt-16 border-t border-genz-border/30 pt-6 flex flex-col sm:flex-row items-center justify-between font-mono font-bold text-xs text-genz-light/80 dark:text-genz-blue">
+          <p>© {new Date().getFullYear()} SHAHROZE STUDIO.</p>
+          <div className="mt-4 sm:mt-0 bg-genz-pink text-white px-3 py-1 border border-genz-border/20">
             <span>LAHORE, PAKISTAN</span>
           </div>
         </div>

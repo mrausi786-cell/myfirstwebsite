@@ -3,212 +3,139 @@
 import React from "react";
 import Link from "next/link";
 import { useStore } from "@/context/StoreContext";
-import { ArrowRight, Star, ArrowUpRight, ShieldCheck, Heart } from "lucide-react";
+import { ArrowRight, Star, ArrowUpRight, Heart } from "lucide-react";
 
 export default function Home() {
   const { products, toggleWishlist, wishlist } = useStore();
 
-  // Filter products for homepage sections
   const featuredProducts = products.filter((p) => p.featured).slice(0, 4);
   const newArrivals = products.filter((p) => p.newArrival).slice(0, 4);
   const bestSellers = products.filter((p) => p.bestSeller).slice(0, 4);
 
-  const testimonials = [
-    {
-      id: 1,
-      quote: "The quality of the loopback terry is exceptional. It fits boxy, heavy, and retains its shape after multiple washes. A true wardrobe staple.",
-      author: "Adrian G.",
-      location: "Karachi"
-    },
-    {
-      id: 2,
-      quote: "Shahroze Studio hits the perfect sweet spot between high-end loungewear and structural tailoring. The oatmeal tracksuit is perfect.",
-      author: "Sarah L.",
-      location: "Lahore"
-    }
-  ];
-
   const instagramPosts = [
-    { id: 1, image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600" },
-    { id: 2, image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=600" },
-    { id: 3, image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=600" },
-    { id: 4, image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600" },
-    { id: 5, image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?q=80&w=600" },
-    { id: 6, image: "https://images.unsplash.com/photo-1576871337622-98d48d4aa53e?q=80&w=600" }
+    { id: 1, image: "/images/model_instagram_1.png" },
+    { id: 2, image: "/images/model_instagram_2.png" },
+    { id: 3, image: "/images/model_instagram_3.png" },
+    { id: 4, image: "/images/model_instagram_4.png" },
+    { id: 5, image: "/images/model_block_printed_kurta.png" },
+    { id: 6, image: "/images/model_urdu_hoodie.png" }
   ];
 
   return (
-    <div className="space-y-20 pb-20">
+    <div className="space-y-32 pb-32">
       
-      {/* 1. Full-Screen Hero Banner */}
-      <section className="relative flex h-[calc(100vh-4rem)] w-full items-center justify-center overflow-hidden bg-luxury-black">
-        {/* Background Image */}
+      {/* 1. Full-Screen Elegant Campaign Hero */}
+      <section className="relative flex h-[calc(100vh-6rem)] w-full items-center justify-center overflow-hidden bg-genz-black">
+        {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1600"
-            alt="Shahroze Studio Collection"
-            className="h-full w-full object-cover object-center opacity-65 grayscale transition-transform duration-10000 hover:scale-105"
+            src="/images/hero_pakistani_models.png"
+            alt="Shahroze Studio Hero Campaign"
+            className="h-full w-full object-cover object-center brightness-[0.75]"
           />
-          {/* Black overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/90 via-luxury-black/35 to-luxury-black/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-genz-black via-transparent to-transparent opacity-60" />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center text-white">
-          <p className="font-display text-xs font-semibold tracking-widest uppercase mb-4 text-luxury-beige-light">
-            SHAHROZE STUDIO // EDITORIAL EDITION
-          </p>
-          <h1 className="font-serif text-4xl font-light tracking-wide sm:text-6xl md:text-7xl mb-6">
-            Timeless Style.<br />Modern Confidence.
+        <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
+          <div className="inline-block bg-genz-pink text-white font-mono px-4 py-1.5 text-xs font-bold uppercase mb-6 tracking-widest rounded-sm">
+            DESI STREETWEAR. REFINED.
+          </div>
+          
+          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-light text-white leading-none tracking-tight mb-8 uppercase">
+            BREAK<br />
+            <span className="font-serif italic text-genz-blue dark:text-genz-blue">TRADITION.</span>
           </h1>
-          <p className="mx-auto max-w-lg font-sans text-xs tracking-wider uppercase text-luxury-border mb-8 leading-relaxed">
-            Constructed with meticulous precision. Designed for the modern silhouette.
+          
+          <p className="mx-auto max-w-xl font-sans text-sm tracking-wide text-genz-light/90 mb-10 p-4 bg-genz-black/55 backdrop-blur-md border border-white/10 rounded-sm">
+            Rewriting the rules of Pakistani fashion. Reimagined traditional drapes, premium raw silks, and contemporary street silhouettes.
           </p>
+          
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <Link
               href="/shop"
-              className="w-full sm:w-auto bg-white px-8 py-3.5 text-xs font-bold tracking-widest text-luxury-black transition-all hover:bg-luxury-beige-light hover:tracking-[0.2em] text-center"
+              className="w-full sm:w-auto bg-genz-pink hover:bg-genz-pink/90 text-white font-sans tracking-widest font-bold text-xs uppercase px-10 py-5 rounded-sm transition-colors duration-300"
             >
-              SHOP NEW ARRIVALS
+              SHOP THE DROP
             </Link>
             <Link
               href="/about"
-              className="w-full sm:w-auto border border-white px-8 py-3.5 text-xs font-bold tracking-widest text-white transition-all hover:bg-white/10 text-center"
+              className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm font-sans tracking-widest font-bold text-xs uppercase px-10 py-5 rounded-sm transition-colors duration-300"
             >
-              OUR STORY
+              OUR GENESIS
             </Link>
           </div>
         </div>
+      </section>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-[9px] tracking-widest text-white/60 animate-bounce">
-          SCROLL DOWN
+      {/* 2. Marquee Slogan */}
+      <section className="bg-genz-charcoal py-5 overflow-hidden border-y border-genz-border/20">
+        <div className="animate-marquee-fast whitespace-nowrap flex text-2xl font-display font-light text-genz-light uppercase tracking-wider">
+          <span className="mx-8 text-genz-blue">PAKISTANI DRIP</span> •
+          <span className="mx-8 text-genz-pink">100% RESPONSIBLE CRAFT</span> •
+          <span className="mx-8 text-white">RAW SILK. RAW ENERGY.</span> •
+          <span className="mx-8 text-genz-blue">PAKISTANI DRIP</span> •
+          <span className="mx-8 text-genz-pink">100% RESPONSIBLE CRAFT</span> •
+          <span className="mx-8 text-white">RAW SILK. RAW ENERGY.</span> •
         </div>
       </section>
 
-      {/* 2. Core Slogan Callout */}
-      <section className="mx-auto max-w-5xl px-4 text-center">
-        <span className="font-serif italic text-luxury-beige-dark text-lg sm:text-2xl md:text-3xl max-w-3xl mx-auto block leading-relaxed dark:text-luxury-beige">
-          "Shahroze Studio was created with a passion for timeless fashion and premium quality. Our mission is to deliver modern and comfortable clothing that combines style with confidence."
-        </span>
-      </section>
-
-      {/* 3. Featured Collections Grid */}
+      {/* 3. New Arrivals (Refined Grid) */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          
-          {/* Box 1 */}
-          <div className="group relative h-[450px] overflow-hidden bg-luxury-lightGray dark:bg-luxury-charcoal">
-            <img
-              src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=800"
-              alt="Premium Hoodies"
-              className="h-full w-full object-cover object-center grayscale transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-            <div className="absolute bottom-6 left-6 text-white">
-              <p className="text-[10px] tracking-widest text-luxury-beige">COLLECTION</p>
-              <h3 className="font-display text-lg font-bold tracking-wider mt-1">ORGANIC HOODIES</h3>
-              <Link href="/shop?category=Hoodies" className="inline-flex items-center text-[10px] tracking-widest mt-2 hover:underline">
-                EXPLORE NOW <ArrowRight className="h-3 w-3 ml-1" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Box 2 */}
-          <div className="group relative h-[450px] overflow-hidden bg-luxury-lightGray dark:bg-luxury-charcoal">
-            <img
-              src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=800"
-              alt="Minimalist T-Shirts"
-              className="h-full w-full object-cover object-center grayscale transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-            <div className="absolute bottom-6 left-6 text-white">
-              <p className="text-[10px] tracking-widest text-luxury-beige">COLLECTION</p>
-              <h3 className="font-display text-lg font-bold tracking-wider mt-1">MINIMAL TEES</h3>
-              <Link href="/shop?category=T-Shirts" className="inline-flex items-center text-[10px] tracking-widest mt-2 hover:underline">
-                EXPLORE NOW <ArrowRight className="h-3 w-3 ml-1" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Box 3 */}
-          <div className="group relative h-[450px] overflow-hidden bg-luxury-lightGray dark:bg-luxury-charcoal">
-            <img
-              src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=800"
-              alt="Tailored Jackets"
-              className="h-full w-full object-cover object-center grayscale transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-            <div className="absolute bottom-6 left-6 text-white">
-              <p className="text-[10px] tracking-widest text-luxury-beige">COLLECTION</p>
-              <h3 className="font-display text-lg font-bold tracking-wider mt-1">STUDIO JACKETS</h3>
-              <Link href="/shop?category=Jackets" className="inline-flex items-center text-[10px] tracking-widest mt-2 hover:underline">
-                EXPLORE NOW <ArrowRight className="h-3 w-3 ml-1" />
-              </Link>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 4. New Arrivals Carousel Slider */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between border-b border-luxury-border pb-4 mb-8 dark:border-luxury-charcoal">
+        <div className="flex flex-col md:flex-row items-end justify-between border-b border-genz-border pb-6 mb-12">
           <div>
-            <p className="text-[10px] tracking-widest text-luxury-gray dark:text-luxury-beige/70">RECENT RELEASES</p>
-            <h2 className="font-display text-xl font-bold tracking-widest mt-1">NEW ARRIVALS</h2>
+            <div className="bg-genz-acid text-genz-light font-mono text-[10px] tracking-wider font-bold px-3 py-1 inline-block mb-3 rounded-full border border-genz-border/20">
+              NEW HEAT 🔥
+            </div>
+            <h2 className="font-display text-4xl md:text-6xl font-light uppercase text-black dark:text-white leading-tight">LATEST DROPS</h2>
           </div>
-          <Link href="/shop" className="group inline-flex items-center text-xs font-bold tracking-widest hover:text-luxury-beige-dark">
-            VIEW ALL CATALOG <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
+          <Link href="/shop" className="group mt-4 md:mt-0 inline-flex items-center bg-genz-black text-white font-sans text-xs tracking-wider font-bold px-6 py-3.5 border border-genz-border hover:bg-genz-pink transition-colors duration-300">
+            VIEW ALL CATALOG <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {newArrivals.map((product) => {
             const isWishlisted = wishlist.includes(product.id);
             return (
-              <div key={product.id} className="group relative flex flex-col">
-                {/* Image card wrapper */}
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-luxury-lightGray dark:bg-luxury-charcoal">
+              <div key={product.id} className="group relative flex flex-col bg-white brutalist-border p-2 dark:bg-[#141414]">
+                <div className="relative aspect-[3/4] w-full border border-genz-border/20 overflow-hidden bg-gray-100">
                   <Link href={`/shop/${product.id}`}>
                     <img
                       src={product.images[0]}
                       alt={product.name}
-                      className="h-full w-full object-cover object-center grayscale transition-transform duration-700 group-hover:scale-105"
+                      className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                   </Link>
 
-                  {/* Badge */}
-                  <span className="absolute left-3 top-3 bg-luxury-black text-[9px] font-bold text-white px-2 py-1 tracking-widest uppercase dark:bg-white dark:text-luxury-black">
-                    NEW
-                  </span>
+                  {/* Badges */}
+                  <div className="absolute left-3 top-3 bg-genz-pink text-white font-mono text-[9px] tracking-wider font-bold px-2 py-0.5 rounded z-10 shadow-sm">
+                    NEW ARRIVAL
+                  </div>
 
                   {/* Wishlist Button */}
                   <button
                     onClick={() => toggleWishlist(product.id)}
-                    className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white text-luxury-black shadow-sm transition-transform hover:scale-105 active:scale-95"
-                    aria-label="Add to Wishlist"
+                    className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-genz-border/20 hover:bg-white transition-colors z-10 shadow-sm"
                   >
-                    <Heart className={`h-4 w-4 ${isWishlisted ? "fill-red-500 text-red-500" : "text-luxury-black"}`} />
+                    <Heart className={`h-4.5 w-4.5 ${isWishlisted ? "fill-genz-pink text-genz-pink" : "text-black"}`} />
                   </button>
 
-                  {/* Quick-add overlay bar */}
-                  <div className="absolute bottom-0 left-0 w-full translate-y-full bg-luxury-black/90 py-3 text-center transition-transform duration-300 group-hover:translate-y-0">
-                    <Link href={`/shop/${product.id}`} className="text-[10px] font-bold tracking-widest text-white hover:text-luxury-beige">
-                      SELECT OPTIONS
+                  <div className="absolute bottom-0 left-0 w-full translate-y-full bg-genz-black/90 py-3 text-center transition-transform duration-300 group-hover:translate-y-0 z-20">
+                    <Link href={`/shop/${product.id}`} className="font-sans text-xs font-bold tracking-widest uppercase text-white hover:text-genz-blue transition-colors">
+                      DISCOVER FIT
                     </Link>
                   </div>
                 </div>
 
-                {/* Meta details */}
-                <div className="mt-3 flex justify-between items-start text-xs">
-                  <div className="space-y-1">
-                    <h3 className="font-semibold tracking-wider text-luxury-black dark:text-white group-hover:underline">
-                      <Link href={`/shop/${product.id}`}>{product.name}</Link>
-                    </h3>
-                    <p className="text-luxury-gray text-[11px] dark:text-luxury-beige/60">{product.category}</p>
+                <div className="mt-4 px-2 pb-2">
+                  <h3 className="font-display font-medium text-lg uppercase text-black dark:text-white leading-tight mb-2">
+                    <Link href={`/shop/${product.id}`} className="hover:text-genz-pink transition-colors">{product.name}</Link>
+                  </h3>
+                  <div className="flex justify-between items-center">
+                    <span className="text-genz-gray font-mono text-xs">{product.category}</span>
+                    <span className="font-mono text-lg font-bold text-black dark:text-white">Rs. {product.price}</span>
                   </div>
-                  <span className="font-bold text-luxury-black dark:text-white">Rs. {product.price.toLocaleString()}</span>
                 </div>
               </div>
             );
@@ -216,87 +143,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Best Sellers Grid Section */}
-      <section className="bg-luxury-lightGray py-20 dark:bg-luxury-charcoal/20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-[10px] tracking-widest text-luxury-gray dark:text-luxury-beige/70">STUDIO CLASSICS</p>
-            <h2 className="font-display text-2xl font-bold tracking-widest mt-1">BEST SELLERS</h2>
-            <div className="mx-auto h-0.5 w-12 bg-luxury-black mt-3 dark:bg-white" />
+      {/* 4. Elegant Editorial Callout */}
+      <section className="bg-genz-pink py-20 border-y border-genz-border/10">
+        <div className="mx-auto max-w-4xl px-4 text-center text-white">
+          <div className="inline-block bg-genz-black text-genz-light mb-6 border border-genz-border/20 px-6 py-2 rounded-sm shadow-sm">
+            <h3 className="font-display text-xl font-light tracking-widest uppercase">REDEFINING THE DESI SILHOUETTE</h3>
           </div>
-
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-            {bestSellers.map((product) => {
-              const isWishlisted = wishlist.includes(product.id);
-              return (
-                <div key={product.id} className="group relative flex flex-col bg-white p-3 dark:bg-luxury-charcoal/50">
-                  <div className="relative aspect-[3/4] w-full overflow-hidden bg-luxury-lightGray dark:bg-luxury-charcoal">
-                    <Link href={`/shop/${product.id}`}>
-                      <img
-                        src={product.images[0]}
-                        alt={product.name}
-                        className="h-full w-full object-cover object-center grayscale transition-transform duration-700 group-hover:scale-105"
-                      />
-                    </Link>
-
-                    {/* Wishlist Button */}
-                    <button
-                      onClick={() => toggleWishlist(product.id)}
-                      className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white text-luxury-black shadow-sm transition-transform hover:scale-105 active:scale-95"
-                      aria-label="Add to Wishlist"
-                    >
-                      <Heart className={`h-4 w-4 ${isWishlisted ? "fill-red-500 text-red-500" : "text-luxury-black"}`} />
-                    </button>
-                  </div>
-
-                  <div className="mt-3 flex justify-between items-start text-xs">
-                    <div className="space-y-1">
-                      <h3 className="font-semibold tracking-wider text-luxury-black dark:text-white">
-                        <Link href={`/shop/${product.id}`}>{product.name}</Link>
-                      </h3>
-                      <p className="text-luxury-gray text-[11px] dark:text-luxury-beige/60">{product.category}</p>
-                    </div>
-                    <span className="font-bold text-luxury-black dark:text-white">Rs. {product.price.toLocaleString()}</span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Brand Testimonials Carousel */}
-      <section className="mx-auto max-w-4xl px-4 py-8">
-        <div className="border-t border-b border-luxury-border py-12 dark:border-luxury-charcoal text-center">
-          <div className="flex justify-center space-x-1 text-luxury-beige-dark mb-4">
-            {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current text-luxury-black dark:text-white" />)}
-          </div>
-          <p className="font-serif italic text-lg sm:text-xl text-luxury-black dark:text-white leading-relaxed max-w-2xl mx-auto">
-            "The fit and fabric quality are unmatched. It feels extremely premium and minimal—reminiscent of high-end garments from Paris fashion houses."
+          <p className="font-display text-2xl md:text-3xl italic font-light leading-relaxed max-w-3xl mx-auto text-genz-light">
+            "We took the traditional Shalwar Kameez, merged it with relaxed contemporary street proportions, and styled it with fine hand-block embroidery. This is the new age of Desi Couture."
           </p>
-          <span className="block mt-4 text-[10px] tracking-widest text-luxury-gray uppercase dark:text-luxury-beige/70">
-            AHMED K. • LAHORE, PK
-          </span>
         </div>
       </section>
 
-      {/* 7. Instagram Gallery Section */}
+      {/* 5. Instagram Gallery */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
-          <p className="text-[10px] tracking-widest text-luxury-gray dark:text-luxury-beige/70">#SHAHROZESTUDIO</p>
-          <h2 className="font-display text-xl font-bold tracking-widest mt-1">SHARE YOUR LOOKS</h2>
+        <div className="text-center mb-12">
+          <span className="text-genz-pink font-mono text-sm tracking-widest font-bold inline-block mb-2 uppercase">
+            #SHAHROZESTUDIO
+          </span>
+          <h2 className="font-display text-4xl md:text-6xl font-light uppercase mt-2 dark:text-white">CURATED LOOKS</h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {instagramPosts.map((post) => (
-            <div key={post.id} className="group relative aspect-square overflow-hidden bg-luxury-lightGray dark:bg-luxury-charcoal">
-              <img
-                src={post.image}
-                alt="Instagram Look"
-                className="h-full w-full object-cover object-center grayscale transition-all duration-500 group-hover:scale-105 group-hover:blur-[2px]"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <ArrowUpRight className="h-6 w-6 text-white" />
+            <div key={post.id} className="group relative aspect-square bg-white brutalist-border p-1 hover:scale-[1.02] transition-transform duration-300">
+              <div className="w-full h-full border border-genz-border/10 overflow-hidden relative">
+                <img
+                  src={post.image}
+                  alt="Instagram Look"
+                  className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                  <ArrowUpRight className="h-8 w-8 text-white hover:text-genz-pink transition-colors" />
+                </div>
               </div>
             </div>
           ))}

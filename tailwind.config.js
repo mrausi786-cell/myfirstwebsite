@@ -9,24 +9,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        luxury: {
-          black: "#111111",
-          charcoal: "#1A1A1A",
-          gray: "#767676",
-          lightGray: "#F5F5F5",
-          border: "#E5E5E5",
-          beige: {
-            DEFAULT: "#D7D2CB",
-            light: "#F7F6F4",
-            dark: "#A39B92",
-            accent: "#EAE6DF"
-          }
+        genz: {
+          pink: "#C2593E", // Terracotta Rust
+          acid: "#0F2E25", // Midnight Forest Green
+          blue: "#8DA89F", // Soft Sage Green
+          purple: "#A04B35", // Muted Copper
+          orange: "#D98A2B", // Deep Amber
+          black: "#0B100E", // Midnight Obsidian
+          charcoal: "#151C19", // Deep Green-Charcoal
+          gray: "#768580", // Soft Muted Sage
+          light: "#FCFAF7", // Warm Sand/Linen
+          white: "#FAF8F5", // Clean Linen
+          border: "#E4DCD0" // Linen Outline
         }
       },
       fontFamily: {
         sans: ["var(--font-sans)", "Inter", "sans-serif"],
-        display: ["var(--font-display)", "Outfit", "sans-serif"],
-        serif: ["Playfair Display", "Georgia", "serif"]
+        display: ["var(--font-display)", "Cormorant Garamond", "serif"],
+        mono: ["Space Grotesk", "monospace"]
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -34,7 +34,24 @@ module.exports = {
       },
       letterSpacing: {
         widest: ".25em",
-        widers: ".15em"
+        widers: ".15em",
+        tighter: "-.05em",
+      },
+      animation: {
+        'marquee': 'marquee 25s linear infinite',
+        'marquee-fast': 'marquee 15s linear infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'bounce-soft': 'bounceSoft 2s infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        bounceSoft: {
+          '0%, 100%': { transform: 'translateY(-5%)', animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)' },
+          '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' },
+        }
       }
     },
   },
